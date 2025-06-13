@@ -2,16 +2,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import Dashboard from "./pages/Dashboard";
-import Providers from "./pages/Providers";
-import Offices from "./pages/Offices";
-import Billing from "./pages/Billing";
-import Invoices from "./pages/Invoices";
-import Payments from "./pages/Payments";
-import Reports from "./pages/Reports";
-import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -20,19 +10,14 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/providers" element={<Providers />} />
-          <Route path="/offices" element={<Offices />} />
-          <Route path="/billing" element={<Billing />} />
-          <Route path="/invoices" element={<Invoices />} />
-          <Route path="/payments" element={<Payments />} />
-          <Route path="/reports" element={<Reports />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            Добро пожаловать! 🚀
+          </h1>
+          <p className="text-gray-600 text-lg">Проект готов к новым идеям</p>
+        </div>
+      </div>
     </TooltipProvider>
   </QueryClientProvider>
 );
